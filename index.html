@@ -308,6 +308,27 @@ footer strong{color:#C3CFD3;font-weight:500}
 }
 .tally .score{margin-left:auto}
 
+/* preview */
+.notice{
+  background:var(--mark-2);border:1px solid #EBD6A8;border-radius:var(--radius);
+  padding:14px 17px;margin-bottom:18px;font-size:.9rem;color:#6B5518;max-width:70ch;
+}
+.notice b{color:#4D3D0F}
+.brief{
+  background:var(--card);border:1px solid var(--line-2);border-left:3px solid var(--go);
+  border-radius:0 var(--radius) var(--radius) 0;padding:18px 20px;margin-bottom:12px;
+}
+.brief h3{margin:0 0 9px;font-size:1rem;font-weight:600}
+.brief .sit{margin:0 0 14px;font-size:.93rem;color:var(--ink-2);max-width:66ch}
+.brief dl{margin:0;display:grid;gap:9px}
+.brief dt{
+  font-size:.74rem;font-weight:600;color:var(--go);background:var(--go-2);
+  display:inline-block;padding:2px 9px;border-radius:999px;margin-bottom:4px;
+}
+.brief dd{margin:0;font-size:.9rem;color:var(--ink-2);max-width:66ch}
+.brief dd ul{margin:0;padding-left:17px}
+.brief dd li{margin-bottom:4px}
+
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
   html{scroll-behavior:auto}
@@ -333,6 +354,7 @@ footer strong{color:#C3CFD3;font-weight:500}
     <li><a href="#basic">파이썬 기본</a></li>
     <li><a href="#flow">흐름 제어</a></li>
     <li><a href="#practice">유형 연습</a></li>
+    <li><a href="#preview">나오는 상황</a></li>
     <li><a href="#mistake">자주 놓치는 것</a></li>
     <li><a href="#check">자기 점검</a></li>
   </ul>
@@ -622,7 +644,109 @@ footer strong{color:#C3CFD3;font-weight:500}
   </div>
 </section>
 
-<!-- ============ 7. MISTAKES ============ -->
+<!-- ============ 7. PREVIEW ============ -->
+<section id="preview">
+  <div class="sec-head">
+    <h2>나오는 상황 미리보기</h2>
+    <p>지문이 길게 붙는 문항은 상황을 파악하는 데만 시간이 걸립니다. 아래 네 가지 상황과 동작 조건을 미리 읽어 두면, 시험장에서는 지문을 확인만 하고 바로 코드로 넘어갈 수 있습니다.</p>
+  </div>
+
+  <div class="notice">
+    <b>코드는 들어 있지 않습니다.</b> 상황과 조건을 읽고 "나라면 이걸 어떻게 코드로 옮길까"를 먼저 생각해 보세요. 실제 코드와 세부 숫자는 시험지에서 확인해야 합니다.
+  </div>
+
+  <div class="brief">
+    <h3>① 놀이기구 대기 순서</h3>
+    <p class="sit">놀이공원에서 대기 번호를 받아 놀이기구를 타는 상황입니다.</p>
+    <dl>
+      <div><dt>동작 조건</dt><dd>
+        <ul>
+          <li>대기 번호는 1번부터 시작하고, 빈자리 없이 순서대로 정해진 인원씩 함께 탑승합니다</li>
+          <li>맨 앞 차례는 기다리지 않고 바로 타며, 그 뒤로는 일정한 시간 간격으로 다음 차례가 탑승합니다</li>
+          <li>나와 친구 두 명은 연속된 세 개의 번호를 받습니다</li>
+        </ul>
+      </dd></div>
+      <div><dt>프로그램이 하는 일</dt><dd>내 번호를 입력받아 내가 기다리는 시간을 계산하고, 세 사람이 같은 차례에 타는지를 참·거짓으로 저장해 출력합니다.</dd></div>
+      <div><dt>준비할 것</dt><dd>
+        <ul>
+          <li>번호를 인원수로 나누었을 때 몇 번째 묶음에 속하는지 구하는 계산</li>
+          <li>첫 묶음이 0번째로 세어지는지 1번째로 세어지는지 구분하기</li>
+          <li>지문에 예시 표가 함께 주어집니다. <b>표의 모든 줄</b>을 대입해 식을 검증하세요. 한 줄만 맞는 식은 답이 아닙니다</li>
+        </ul>
+      </dd></div>
+    </dl>
+  </div>
+
+  <div class="brief">
+    <h3>② 물건 구매와 결제</h3>
+    <p class="sit">가격이 정해진 물건을 여러 개 사고 금액을 계산하는 상황입니다.</p>
+    <dl>
+      <div><dt>동작 조건</dt><dd>
+        <ul>
+          <li>물건 한 개의 가격은 지문에 정해져 있습니다</li>
+          <li>구매 수량과 지불할 금액을 각각 입력받습니다</li>
+          <li>금액이 모자라면 부족하다는 문구를, 충분하면 남는 금액을 출력합니다</li>
+        </ul>
+      </dd></div>
+      <div><dt>프로그램이 하는 일</dt><dd>수량과 가격으로 결제에 필요한 금액을 구하고, 남는 금액을 계산한 뒤, 조건에 따라 서로 다른 문구를 출력합니다.</dd></div>
+      <div><dt>준비할 것</dt><dd>
+        <ul>
+          <li>어느 값에서 어느 값을 빼야 하는지 순서 정하기. 순서가 바뀌면 부호가 반대가 됩니다</li>
+          <li>if 쪽과 else 쪽에 어떤 문구가 있는지 먼저 보고 나서 조건을 정하기</li>
+        </ul>
+      </dd></div>
+    </dl>
+  </div>
+
+  <div class="brief">
+    <h3>③ 로봇의 출발 가능 여부 판정</h3>
+    <p class="sit">로봇이 출발해도 되는지를 두 가지 측정값으로 판단하는 상황입니다.</p>
+    <dl>
+      <div><dt>동작 조건</dt><dd>
+        <ul>
+          <li>배터리 잔량과 남은 이동 거리를 한 줄에 함께 입력받습니다</li>
+          <li>배터리가 충분한지, 거리가 가까운지를 각각 판단해 참·거짓으로 저장합니다</li>
+          <li>둘 다 만족 / 하나만 만족 / 둘 다 만족하지 못함에 따라 서로 다른 문구가 출력됩니다</li>
+          <li>판정 결과에 따라 뒤에 이어지는 반복의 횟수가 달라져, 동작 문구가 여러 번 출력됩니다</li>
+        </ul>
+      </dd></div>
+      <div><dt>프로그램이 하는 일</dt><dd>두 비교 결과를 변수에 저장해 조합하고, 분기에서 정해진 값만큼 반복을 실행합니다.</dd></div>
+      <div><dt>준비할 것</dt><dd>
+        <ul>
+          <li>비교식의 결과를 변수에 담아 조건문에 쓰는 형태에 익숙해지기</li>
+          <li>기준과 <b>똑같은 값</b>이 들어왔을 때 어느 쪽으로 판정되는지 검산하기</li>
+          <li>분기에서 정해진 값이 반복 횟수로 이어지는 과정을 끝까지 추적하기</li>
+          <li>코드 전체에 어떤 종류의 연산자가 쓰였는지 훑어보는 연습</li>
+        </ul>
+      </dd></div>
+    </dl>
+  </div>
+
+  <div class="brief">
+    <h3>④ 계단 오르기 게임</h3>
+    <p class="sit">에너지를 써서 계단을 오르고 결과에 따라 등급을 받는 상황입니다.</p>
+    <dl>
+      <div><dt>동작 조건</dt><dd>
+        <ul>
+          <li>보유 에너지와 도전할 계단 수를 입력받습니다</li>
+          <li>계단이 높아질수록 필요한 에너지가 일정하게 늘어납니다. 늘어나는 규칙은 지문에 예시와 함께 주어집니다</li>
+          <li>도전할 계단을 모두 오르는 데 필요한 에너지의 합을 구해 보유 에너지와 비교합니다</li>
+          <li>에너지가 모자라면 도전 불가로, 충분하면 오른 계단 수에 따라 등급이 정해집니다</li>
+        </ul>
+      </dd></div>
+      <div><dt>프로그램이 하는 일</dt><dd>반복으로 필요한 에너지를 누적하고, 보유 에너지와의 차이를 구한 뒤, 조건에 따라 등급을 정해 출력합니다.</dd></div>
+      <div><dt>준비할 것</dt><dd>
+        <ul>
+          <li>반복 변수가 계산식 안에 직접 들어가는 형태 익히기</li>
+          <li>반복 범위가 바뀌면 더해지는 값이 어떻게 달라지는지 두 경우를 나란히 비교하기</li>
+          <li>조건을 위에서부터 검사하므로 <b>순서가 결과를 바꾼다</b>는 점 확인하기</li>
+        </ul>
+      </dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ 8. MISTAKES ============ -->
 <section id="mistake">
   <div class="sec-head">
     <h2>자주 놓치는 것들</h2>
@@ -642,7 +766,7 @@ footer strong{color:#C3CFD3;font-weight:500}
   </ol>
 </section>
 
-<!-- ============ 8. CHECK ============ -->
+<!-- ============ 9. CHECK ============ -->
 <section id="check">
   <div class="sec-head">
     <h2>자기 점검 — 설명할 수 있으면 아는 것</h2>
