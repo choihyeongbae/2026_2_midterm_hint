@@ -50,6 +50,28 @@ section:first-of-type{border-top:none}
 }
 .sec-head p{margin:0;color:var(--ink-2);font-size:0.95rem}
 
+/* ---------- question channel ---------- */
+.question-banner{
+  background:#E2EFEA;
+  border-bottom:1px solid #BBD7CB;
+  padding:15px 0;
+}
+.question-banner .question-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px 20px;
+}
+.question-banner .question-title{margin:0;font-size:1rem;font-weight:600;color:#174F40}
+.question-banner .question-desc{margin:3px 0 0;font-size:.87rem;color:#365F53}
+.question-banner .question-link{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 17px;min-height:44px;border-radius:8px;
+  background:#1F6F5C;color:#fff;text-decoration:none;
+  font-size:.9rem;font-weight:600;white-space:nowrap;
+}
+.question-banner .question-link:hover{background:#175543}
+.question-banner .question-link:focus-visible{outline:3px solid #E0A82E;outline-offset:3px}
+@media(max-width:560px){.question-banner .question-link{width:100%}}
+
 /* ---------- hero ---------- */
 header.hero{
   background:var(--ink);
@@ -336,6 +358,18 @@ footer strong{color:#C3CFD3;font-weight:500}
 </style>
 </head>
 <body>
+
+<aside class="question-banner" aria-label="질문 오픈채팅방 안내">
+  <div class="wrap question-inner">
+    <div>
+      <p class="question-title">공부하다 궁금한 점이 있나요?</p>
+      <p class="question-desc">이해되지 않는 개념이나 풀이 과정은 질문 오픈채팅방에서 물어보세요.</p>
+    </div>
+    <a class="question-link" href="https://open.kakao.com/o/szLXF2Ri" target="_blank" rel="noopener noreferrer" aria-label="질문 오픈채팅방 입장하기 (새 창)">질문 오픈채팅방 입장 ↗</a>
+  </div>
+</aside>
+
+
 
 <header class="hero">
   <div class="wrap">
